@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.ItemDao">
+	<resultMap type="com.baizhi.entity.Item" id="ItemMap">
+		<id column="id"  property="id"/>
+		<result column="book_id" property="bookId"/>
+		<result column="count" property="count"/>
+		<result column="create_date" property="createDate"/>
+		<result column="order_id" property="orderId"/>
+		<association property="book" javaType="com.baizhi.entity.Book">
+		<id column="id" property="id"/>
+			<result column="name" property="name"/>
+			<result column="author" property="author"/>
+			<result column="cover" property="cover"/>
+			<result column="press" property="press"/>
+			<result column="press_date" property="press_date"/>
+			<result column="edition" property="edition"/>
+			<result column="print_date" property="printDate"/>
+			<result column="impression" property="impression"/>
+			<result column="isbn" property="isbn"/>
+			<result column="word_num" property="wordNum"/>
+			<result column="page_num" property="pageNum"/>
+			<result column="sizeb" property="sizeB"/>
+			<result column="paper" property="paper"/>
+			<result column="pack" property="pack"/>
+			<result column="price" property="price"/>
+			<result column="dprice" property="dprice"/>
+			<result column="create_date" property="createDate"/>
+			<result column="editior_recommend" property="editorRecommend"/>
+			<result column="content_abstract" property="contentAbstract"/>
+			<result column="author_abstract" property="authorAbstract"/>
+			<result column="director" property="director"/>
+			<result column="media_commentary" property="mediaCommentary"/>
+			<result column="sale" property="sale"/>
+			<result column="stock" property="stock"/>
+			<result column="update_date" property="updateDate"/>
+			<result column="category_id" property="categoryId"/>
+		</association>
+	</resultMap>
+	<!-- 增 -->
+	<insert id="insert">
+		insert into d_item values(seq_item.nextval,#{count},sysdate,#{bookId},#{orderId})
+	</insert>
+	<!-- 根据id查 -->
+	<select id="selectByOrderId" resultMap="ItemMap">
+		select t1.id,t1.count,t1.create_date,t1.book_id,t1.order_id,t2.name,t2.cover,t2.dprice,t2.price from d_item t1 left join d_book t2 on t1.book_id=t2.id where t1.order_id  = #{orderId}
+	</select>
+</mapper>

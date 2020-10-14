@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <script type="text/javascript" src="../../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+    <style type="text/css">
+        td {
+            padding-top: 8px;
+        }
+
+        #file_upload1 {
+            display: none;
+        }
+
+        #file_upload1_label {
+            display: inline-block;
+            border: 1px solid #aaa;
+            width: 120px;
+            height: 145px;
+            margin-left: 20px;
+            text-align: center;
+            line-height: 145px;
+            cursor: pointer;
+        }
+
+    </style>
+
+
+</head>
+
+<body
+        style="text-align: center">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-left">添加图书</h4>
+    </div>
+    <div class="panel-body">
+        <form action="" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td><label for="" class="control-label">名称：</label></td>
+                    <td><input type="text" name="book.name" class="  form-control"></td>
+                    <td rowspan="14" style="width: 300px">
+                    <td><label for="" class="control-label">页数：</label></td>
+                    <td><input type="number" name="book.pageNum" class="  form-control"></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">所属分类：</label></td>
+                    <td>
+                        <select name="book.categoryId" class="el-select__inner inner2 form-control">
+                            <option value="">古典小说</option>
+                            <option value="">近现代小说</option>
+                            <option value="">四大名著</option>
+                            <option value="">悬疑</option>
+                        </select>
+                    </td>
+                    <td><label for="" class="control-label">字数：</label></td>
+                    <td><input type="number" name="book.wordNum" class="  form-control"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="" class="control-label">原价：</label></td>
+                    <td><input type="number" name="book.price" class="  form-control"></td>
+                    <td><label for="" class="control-label">封面：</label></td>
+                    <td rowspan="3">
+                        <label id="file_upload1_label" for="file_upload1">
+                            <span id="uploadtip">添加图书封面</span>
+                            <img id="uploadimg" src="" alt="" width="118px" height="143px" />
+                        </label>
+                        <input type="file" name="cover" class="" id="file_upload1"	onchange="upload_review()">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="" class="control-label">当当价：</label></td>
+                    <td><input type=number name="book.dprice" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">库存：</label></td>
+                    <td><input type="number" name="book.stock" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">作者：</label></td>
+                    <td><input type="text" name="book.author" class="  form-control"></td>
+                    <td><label for="" class="control-label">编辑推荐：</label></td>
+                    <td rowspan="2"><textarea class="form-control" name="book.editorRecommend"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">出版社：</label></td>
+                    <td><input type="text" name="book.press" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">出版时间：</label></td>
+                    <td><input type="date" name="book.press_date" class="  form-control"></td>
+                    <td><label for="" class="control-label">内容简介：</label></td>
+                    <td rowspan="2"><textarea class="form-control" name="book.contentAbstract"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">版次：</label></td>
+                    <td><input type="text" name="book.edition" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">印刷时间：</label></td>
+                    <td><input type="date" name="book.printDate" class="  form-control"></td>
+                    <td><label for="" class="control-label">作者简介：</label></td>
+                    <td rowspan="2"><textarea class="form-control" name="book.authorAbstract"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">印次：</label></td>
+                    <td><input type="text" name="book.impression" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">ISBN：</label></td>
+                    <td><input type="text" name="book.isbn" class="  form-control"></td>
+                    <td><label for="" class="control-label">基本目录：</label></td>
+                    <td rowspan="2"><textarea class=" form-control" name="book.director"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">开本：</label></td>
+                    <td><input type="text" name="book.sizes" class="  form-control"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">纸张：</label></td>
+                    <td><input type="text" name="book.paper" class="  form-control"></td>
+                    <td><label for="" class="control-label">媒体评论：</label></td>
+                    <td rowspan="2"><textarea class=" form-control" name="book.mediaCommentary"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="" class="control-label">包装：</label></td>
+                    <td><input type="text" name="book.pack" class="form-control"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <input type="submit" class="btn btn-success" value="提交" />&emsp;
+            <input type="button" class="btn btn-warning" value="返回上级" onclick="history.go(-1);" />
+        </form>
+    </div>
+    <div class="panel-footer"></div>
+</div>
+
+<script>
+    function upload_review() {
+        var img = document.getElementById("uploadimg");
+        var input = document.getElementById("file_upload1");
+        var tip = document.getElementById("uploadtip");
+
+        var file = input.files.item(0);
+        var freader = new FileReader();
+        freader.readAsDataURL(file);
+        freader.onload = function(e) {
+            img.src = e.target.result;
+            tip.style.display = "none";
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <style type="text/css">
+        .navbar-nav li.divider:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 14px;
+            background-color: #a4a4a4;
+            top: 18px;
+            right: 0;
+        }
+        .carousel-indicators li{
+            background-color:rgba(167,167,167,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.baizhiedu.com" class="navbar-brand">当当网</a>
+
+            </div>
+            <span class="navbar-text">欢迎您：<a href="" >xxx</a></span>
+            <ul class="nav navbar-nav">
+                <li><a href="" class="navbar-link"><span class="text-primary">登录</span></a></li>
+                <li class="divider"></li>
+                <li><a href="" class="navbar-link"><span class="text-primary">注册</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a href="cart/cart.html">
+                    <svg height="15"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+											<g>
+												<path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3
+													c-7,0-12.8,5.3-13.4,12.3l-28,315.3c0,0.4-0.1,0.8-0.1,1.2c0,35.9,32.9,65.1,73.4,65.1h244.6c40.5,0,73.4-29.2,73.4-65.1
+													C440.2,423.5,440.2,423.1,440.1,422.7z M244.5,27c37.9,0,68.8,30.4,69.6,68.1H174.9C175.7,57.4,206.6,27,244.5,27z M366.8,462
+													H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
+													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
+											</g>
+										</svg>
+                    <span class="text-muted">购物车</span>
+                </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="">我的当当</a></li>
+                <li class="divider"></li>
+                <li><a href="">帮助</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/DDlogoNEW.gif" alt="">
+            </div>
+            <div class="col-md-6">
+                <form action="search-book.html">
+                    <div class="input-group navbar-btn">
+                        <input type="text" name="value" placeholder="搜索关键字"  id="" class="form-control">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <ul class="nav nav-pills">
+                    <li class="bg-success"><a href=""><span class="text-muted">购物车</span><span class="badge">0</span></a></li>
+                    <li class="bg-info"><a href=""><span class="text-muted">我的订单</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">分类浏览</h5>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-group" id="category">
+                            <a href="#1" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[小说]</strong></a>
+
+                            <div class="panel">
+                                <div class="panel-collapse collapse in" id="1">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">小说</a></h5>
+                                        <a href="category-book.html"><span class="text-info">官场</span></a>
+                                        <a href="category-book.html"><span class="text-info">情感</span></a>
+                                        <a href="category-book.html"><span class="text-info">四大名著</span></a>
+                                        <a href="category-book.html"><span class="text-info">科幻小说</span></a>
+                                        <a href="category-book.html"><span class="text-info">近现代小说</span></a>
+                                        <a href="category-book.html"><span class="text-info">古典小说</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#2" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[人文社科]</strong></a>
+                            <div class="panel">
+                                <div class="panel-collapse collapse" id="2">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">人文社科</a></h5>
+                                        <a href="category-book.html"><span class="text-info">历史</span></a>
+                                        <a href="category-book.html"><span class="text-info">古籍</span></a>
+                                        <a href="category-book.html"><span class="text-info">哲学</span></a>
+                                        <a href="category-book.html"><span class="text-info">宗教</span></a>
+                                        <a href="category-book.html"><span class="text-info">文化</span></a>
+                                        <a href="category-book.html"><span class="text-info">政治</span></a>
+                                        <a href="category-book.html"><span class="text-info">军事</span></a>
+                                        <a href="category-book.html"><span class="text-info">法律</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#3" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[文艺]</strong></a>
+                            <div class="panel" >
+                                <div class="panel-collapse collapse" id="3">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">文艺</a></h5>
+                                        <a href="category-book.html"><span class="text-info">文学</span></a>
+                                        <a href="category-book.html"><span class="text-info">传记</span></a>
+                                        <a href="category-book.html"><span class="text-info">艺术</span></a>
+                                        <a href="category-book.html"><span class="text-info">摄影</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#4" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[科技]</strong></a>
+                            <div class="panel">
+                                <div class="panel-collapse collapse" id="4">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">科技</a></h5>
+                                        <a href="category-book.html"><span class="text-info">科普</span></a>
+                                        <a href="category-book.html"><span class="text-info">建筑</span></a>
+                                        <a href="category-book.html"><span class="text-info">医学</span></a>
+                                        <a href="category-book.html"><span class="text-info">计算机</span></a>
+                                        <a href="category-book.html"><span class="text-info">农林</span></a>
+                                        <a href="category-book.html"><span class="text-info">自然科学</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#5" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[生活]</strong></a>
+                            <div class="panel">
+                                <div class="panel-collapse collapse" id="5">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">生活</a></h5>
+                                        <a href="category-book.html"><span class="text-info">两性</span></a>
+                                        <a href="category-book.html"><span class="text-info">孕期</span></a>
+                                        <a href="category-book.html"><span class="text-info">育儿</span></a>
+                                        <a href="category-book.html"><span class="text-info">亲子</span></a>
+                                        <a href="category-book.html"><span class="text-info">家教</span></a>
+                                        <a href="category-book.html"><span class="text-info">保健</span></a>
+                                        <a href="category-book.html"><span class="text-info">运动</span></a>
+                                        <a href="category-book.html"><span class="text-info">家居</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#6" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[童书]</strong></a>
+                            <div class="panel">
+                                <div class="panel-collapse collapse" id="6">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">童书</a></h5>
+                                        <a href="category-book.html"><span class="text-info">0-2</span></a>
+                                        <a href="category-book.html"><span class="text-info">3-6</span></a>
+                                        <a href="category-book.html"><span class="text-info">7-10</span></a>
+                                        <a href="category-book.html"><span class="text-info">11-14</span></a>
+                                        <a href="category-book.html"><span class="text-info">绘本</span></a>
+                                        <a href="category-book.html"><span class="text-info">英语</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#7" data-toggle="collapse" data-parent="#category"><strong class="text-danger">[教育]</strong></a>
+                            <div class="panel">
+                                <div class="panel-collapse collapse" id="7">
+                                    <div class="panel-body bg-success">
+                                        <h5><a href="category-book.html">教育</a></h5>
+                                        <a href="category-book.html"><span class="text-info">教材</span></a>
+                                        <a href="category-book.html"><span class="text-info">外语</span></a>
+                                        <a href="category-book.html"><span class="text-info">考试</span></a>
+                                        <a href="category-book.html"><span class="text-info">中小学辅导</span></a>
+                                        <a href="category-book.html"><span class="text-info">工具书</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="top" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#top" data-slide-to="0"></li>
+                        <li data-target="#top" data-slide-to="1"></li>
+                        <li data-target="#top" data-slide-to="2"></li>
+                        <li data-target="#top" data-slide-to="3"></li>
+                        <li data-target="#top" data-slide-to="4"></li>
+                        <li data-target="#top" data-slide-to="5"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="list-box">
+                        <div class="item active">
+                            <img src="images/top/hzjsj2020618750315.jpg" alt="">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/top/200424_wj_sxzmzt_750x315.jpg" alt="">
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/top/200513_rjn2_dptj_750x315.jpg" alt="">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/top/rrkddlzjs750315.jpg" alt="">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/top/xcjg750_315.jpg" alt="">
+                            <div></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/top/yunjisuan0422750315.jpg" alt="">
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <a href="#top" class="left carousel-control" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#top" class="right carousel-control" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>信息公告</h4>
+                <ul>
+                    <li>精品童装限时0元领</li>
+                    <li>30万图书 5折封顶</li>
+                    <li>当当阅读器 海量电子书免费读</li>
+                    <li>多种商品，礼品卡支付更优惠</li>
+                    <li>当当周年庆 实付200再减30</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <ul class="nav nav-tabs" style="display:inline-block">
+                    <li class="active"><a href="#recommend" data-toggle="tab"><strong>编辑推荐</strong></a></li>
+                    <li><a href="#hot-sale" data-toggle="tab"><strong>热销图书</strong></a></li>
+                    <li><a href="#new-stores" data-toggle="tab"><strong>最新上架图书</strong></a></li>
+                    <li><a href="#new-hot-sale" data-toggle="tab"><strong>新书热卖榜</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tab-content">
+                <div class="tab-pane active" id="recommend">
+                    <!--推荐-->
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href="book-detail.html"><img src="images/book/dzlgz.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="book-detail.html">
+                                    <strong>东周列国志</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href="book-detail.html"><img src="images/book/fsyy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>封神演义</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/gcxxj.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>官场现形记</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href="book-detail.html"><img src="images/book/hlm.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>红楼梦</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="hot-sale">
+                    <!-- 热销 -->
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href="book-detail.html"><img src="images/book/jhy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>镜花缘</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/fsyy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>封神演义</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/jpm.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>金瓶梅</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/hlm.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>红楼梦</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="new-stores">
+                    <!-- 新书上架 -->
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/lzzy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>聊斋志异</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/fsyy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>封神演义</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/gcxxj.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>官场现形记</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/rlws.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>儒林外史</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="new-hot-sale">
+                    <!-- 新书热卖 -->
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/sgyy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>三国演义</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/shz.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>水浒传</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/ssj.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>搜神记</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href=""><img src="images/book/ssxy.jpg" alt="图片"></a>
+                            <div class="caption">
+                                <a href="">
+                                    <strong>世说新语</strong>
+                                </a>
+                                <p><span style="color:red">￥12.0</span><span>&nbsp;</span><del class="text-muted small">￥10.0</del></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        //自定义切换时间 默认为5s
+        $('.carousel').carousel({
+            interval: 4000
+        });
+    </script>
+</body>
+</html>

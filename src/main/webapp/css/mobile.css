@@ -1,0 +1,22 @@
+#pagewrap{
+    width:94%;
+    margin:0 auto;
+}
+.header {
+    height: auto;
+}
+h1{
+    font-size:24px;
+}
+h2{
+    font-size:20px;
+}
+h3{
+    font-size:16px;
+}
+h4{
+    font-size:12px;
+}
+.sidebar {
+    display:none;
+}

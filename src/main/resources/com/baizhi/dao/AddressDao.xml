@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.AddressDao">
+	<resultMap type="com.baizhi.entity.Address" id="AddressMap">
+		<id column="id"  property="id"/>
+		<result column="name" property="name"/>
+		<result column="mobile" property="mobile"/>
+		<result column="province" property="province"/>
+		<result column="city" property="city"/>
+		<result column="district" property="district"/>
+		<result column="town" property="town"/>
+		<result column="address" property="address"/>
+		<result column="create_date" property="createDate"/>
+		<result column="user_id" property="userId"/>
+	</resultMap>
+	<!-- 增 -->
+	<insert id="insert">
+		insert into d_address values(seq_address.nextval,#{name},#{mobile},#{province},#{city},#{district},#{town},#{address},sysdate,#{userId})
+	</insert>
+	<!-- 删 -->
+	<delete id="delete">
+		delete from d_address where id=#{id}
+	</delete>
+	<!-- 改 -->
+	<update id="update">
+		update d_address
+		<set>
+		<if test="name!=null and name.length()>0"> name=#{name},</if>
+		<if test="mobile!=null and mobile.length>0">mobile=#{mobile},</if>
+		<if test="province!=null and province.length>0">province=#{province},</if>
+		<if test="city!=null and city.length>0">city=#{city},</if>
+		<if test="district!=null and district.length>0">district=#{district},</if>
+		<if test="town!=null and town.length>0">town=#{town},</if>
+		<if test="address!=null and address.length>0">address=#{address},</if>
+		create_date=sysdate,
+		<if test="userId!=null and userId>0">user_id=#{userId} </if>
+		</set>
+		where id=#{id}
+	</update>
+	<!-- 查 -->
+	<select id="selectAll" resultMap="AddressMap">
+		select * from d_address
+	</select>
+	<!-- 根据userId查询 -->
+	<select id="selectByUserId" resultMap="AddressMap">
+		select * from d_address where user_id = #{userId}
+	</select>
+</mapper>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <script type="text/javascript" src="../../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="http://www.baizhiedu.com" class="navbar-brand">当当网</a>
+
+        </div>
+        <span class="navbar-text">欢迎您：<a href="" >xxx</a></span>
+        <ul class="nav navbar-nav">
+            <li><a href="" class="navbar-link"><span class="text-primary">登录</span></a></li>
+            <li class="divider"></li>
+            <li><a href="" class="navbar-link"><span class="text-primary">注册</span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li >
+                <a href="cart/cart.html">
+                    <svg height="15"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+											<g>
+												<path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3
+													c-7,0-12.8,5.3-13.4,12.3l-28,315.3c0,0.4-0.1,0.8-0.1,1.2c0,35.9,32.9,65.1,73.4,65.1h244.6c40.5,0,73.4-29.2,73.4-65.1
+													C440.2,423.5,440.2,423.1,440.1,422.7z M244.5,27c37.9,0,68.8,30.4,69.6,68.1H174.9C175.7,57.4,206.6,27,244.5,27z M366.8,462
+													H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
+													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
+											</g>
+										</svg>
+                    <span class="text-muted">购物车</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="">我的当当</a></li>
+            <li class="divider"></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="../images/cart/dd_logo.jpg" alt="" class="pull-right">
+        </div>
+        <div class="col-md-7">
+
+            <ul class="nav nav-pills " style="padding-top:10px">
+                <li  style="margin: 10px;background:rgb(255,102,102)"><h4 style="margin:15px;color:rgb(255,231,250)">1.购物车</h4></li>
+                <li  style="margin: 10px;background:rgb(246,246,246)"><h4 style="margin:15px" class="text-muted">2.填写订单</h4></li>
+                <li  style="margin:10px;background:rgb(246,246,246)"><h4 style="margin:15px" class="text-muted">3.支付订单</h4></li>
+            </ul>
+        </div>
+    </div>
+    <hr style="border:solid 2px red;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:150px">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">商品信息</div>
+                            <div class="col-md-2">单价（元）</div>
+                            <div class="col-md-2 text-center">数量</div>
+                            <div class="col-md-2">金额（元）</div>
+                            <div class="col-md-2">操作</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <ul class="media-list">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <img src="../images/book/jpm.jpg" alt="" class="media-object" style="width:130px">
+                    </div>
+                    <div class="media-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="text-muted small">金瓶梅</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="text-muted small">￥120.0</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default"><span class="glyphicon glyphicon-minus"/></button>
+                                        </div>
+                                        <input type="text"  class="form-control text-center" name="" id="" value="1" >
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default"><span class="glyphicon glyphicon-plus"/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="text-muted small text-center">￥120.0</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="" class="text-muted small">删除</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <img src="../images/book/dzlgz.jpg" alt="" class="media-object" style="width:130px">
+                    </div>
+                    <div class="media-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="text-muted small">东周列国志</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="text-muted small">￥19.0</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default"><span class="glyphicon glyphicon-minus"/></button>
+                                        </div>
+                                        <input type="text"  class="form-control text-center" name="" id="" value="2" >
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default"><span class="glyphicon glyphicon-plus"/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="text-muted small text-center">￥38.0</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="" class="text-muted small">删除</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <strong class="h4 center-block">店铺合计</strong>
+                </div>
+                <div class="col-md-3 col-md-offset-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><span class="small text-muted">总计：</span><span style="color:red">￥158.0</span></p>
+                            <p class="small text-muted">已节省：<span>￥7.0</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="../address/place-order.html" class="btn btn-danger">结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

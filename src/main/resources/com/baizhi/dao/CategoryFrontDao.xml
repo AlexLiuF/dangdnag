@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.CategoryFrontDao">
+<!-- 	 开启二级缓存 
+	<cache/> -->
+	<!-- select标签    代表实现查询方法
+	     id :  dao中对应的方法名
+	     resultType: 指明返回值类型
+                      实体类属性名必须与表中的字段名一致
+	 -->
+	<resultMap type="com.baizhi.entity.Category" id="CategoryMaps">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="levels" property="levels"/>
+		<result column="parent_id" property="parentId"/>
+		<collection property="lis" ofType="com.baizhi.entity.Category">
+			<id column="idc" property="id"/>
+			<result column="namec" property="name"/>
+			<result column="levelsc" property="levels"/>
+			<result column="parent_idc" property="parentId"/>
+		</collection>
+	</resultMap>
+	<!-- 分类浏览界面 -->
+	<select id="selectAllSort" resultMap="CategoryMaps">
+		select c1.id,c1.name,c1.levels,c2.id idc,c2.name namec,c2.levels levelsc,c2.parent_id parent_idc
+		from d_category c1 left join d_category c2 on c1.id = c2.parent_id where c1.levels=1
+	</select>
+	<!-- 查找所有二级 -->
+	<select id="selectByParentId" resultMap="CategoryMaps">
+		select * from d_category where parent_id = #{fid}
+	</select>
+</mapper>

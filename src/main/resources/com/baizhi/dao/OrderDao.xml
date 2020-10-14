@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.OrderDao">
+	<resultMap type="com.baizhi.entity.Order" id="OrderMap">
+		<id column="order_id" property="id"/>
+		<result column="total" property="total"/>
+		<result column="status" property="status"/>
+		<result column="name" property="name"/>
+		<result column="mobile" property="mobile"/>
+		<result column="province" property="province"/>
+		<result column="city" property="city"/>
+		<result column="district" property="district"/>
+		<result column="town" property="town"/>
+		<result column="address" property="address"/>
+		<result column="create_date" property="createDate"/>
+		<result column="user_id" property="userId"/>
+	</resultMap>
+	<!-- 插入 -->
+	<insert id="insert" useGeneratedKeys="true" keyColumn="order_id" keyProperty="id">
+		insert into d_order values(seq_order.nextval,#{total},0,#{name},#{mobile},#{province},#{city},#{district},#{town},#{address},sysdate,#{userId})
+	</insert>
+	<select id="selectById" resultMap="OrderMap">
+		select * from d_order where order_id=#{id}
+	</select>
+	<!-- 修改状态 -->
+	<update id="update">
+		update d_order set status=1 where order_id=#{id}
+	</update>
+	<!-- 查收有-->
+	<select id="selectAll" resultMap="OrderMap">
+		select * from d_order
+	</select>
+</mapper>

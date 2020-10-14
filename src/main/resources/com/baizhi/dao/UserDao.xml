@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper  namespace="com.baizhi.dao.UserDao">
+	<resultMap type="com.baizhi.entity.User" id="UserMap">
+		<id column="id" property="id"/>
+		<result column="email" property="email"/>
+		<result column="password" property="password"/>
+		<result column="salt" property="salt"/>
+		<result column="nickname" property="nickname"/>
+		<result column="status" property="status"/>
+		<result column="code" property="code"/>
+		<result column="create_date" property="create_date"/>
+	</resultMap>
+	<!-- 添加 -->
+	<insert id="insert">
+		insert into d_user values(seq_user.nextval,#{email},#{password},#{salt},#{nickname},#{status},#{code},sysdate)
+	</insert>
+	<!--根据email查  -->
+	<select id="selectByEmail" resultMap="UserMap">
+		select * from d_user where email=#{email}
+	</select>
+	<!--修改状态  -->
+	<update id="update">
+		update d_user set status=#{status} where id=#{id}
+	</update>
+	<!-- 查所有 -->
+	<select id="selectAll" resultMap="UserMap">
+		select * from d_user
+	</select>
+</mapper>

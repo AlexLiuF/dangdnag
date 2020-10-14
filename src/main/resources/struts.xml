@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 后台 -->
+	<!--设置传输的最大内存  -->
+	<constant name="struts.multipart.maxSize" value="2097152000"></constant>
+	<!-- 后台登录 -->
+	<package name="loginback" extends="struts-default" namespace="/loginback">
+		<action name="Loginback_*" class="com.baizhi.action.LoginBackAction" method="{1}">
+			<result name="Ok" type="redirect">/back/login.jsp</result>
+			<result name="buOk" type="redirect">/back/manager.jsp</result>
+		</action>
+	</package>
+	
+	<package name="category" extends="struts-default" namespace="/category">
+		<action name="Category_*" class="com.baizhi.action.CategoryAction" method="{1}">
+			<result name="Ok" type="dispatcher">/back/category/show.jsp</result>
+			<result name="sOk" type="chain">Category_showAll</result>
+			<result name="ssOk"  type="chain">Category_selectByParentId</result>	
+		</action>
+	</package>
+	<package name="orderBack" extends="struts-default" namespace="/orderback">
+		<action name="Orderback_*" class="com.baizhi.action.OrderBackAction" method="{1}">
+			<result name="Ok" type="dispatcher">/back/order/show.jsp</result>
+			<result name="OOk" type="dispatcher">/back/order/detail.jsp</result>
+		</action>
+	</package>
+	<package name="book" extends="struts-default" namespace="/books">
+		<action name="Book_*" class="com.baizhi.action.BookAction" method="{1}">
+			<result name="Ok" type="dispatcher">/back/book/show.jsp</result>
+			<result name="sOk" type="chain">Book_selectAll</result>
+			<result name="ssOk" type="dispatcher">/back/book/update.jsp</result>
+			<result name="tianjiaOk" type="dispatcher">/back/book/add.jsp</result>
+		</action>
+	</package>
+	<package name="user" extends="struts-default" namespace="/user">
+		<action name="User_*" class="com.baizhi.action.UserAction" method="{1}">
+			<result name="Ok" type="dispatcher">/back/user/show.jsp</result>
+			<result  name="sOk" type="redirectAction">User_selectAll</result>
+		</action>
+	</package>
+	<!-- 验证码 -->
+	<package name="captcha" extends="struts-default" namespace="/vericode">
+		<action name="Code_*" class="com.baizhi.action.CodeAction" method="{1}"></action>
+	</package>
+	<!-- 前台 -->
+	<package name="front" extends="struts-default" namespace="/front">
+		<action name="Front_*" class="com.baizhi.action.MainAction" method="{1}">
+			<result name="Ok" type="dispatcher">/front/main.jsp</result>
+			<result name="Oks" type="dispatcher">/front/search-book.jsp</result>
+			<result name="Okss" type="dispatcher">/front/book-detail.jsp</result>
+			<result name="Oksss" type="dispatcher">/front/category-book.jsp</result>
+		</action>
+	</package>
+	<!-- 注册登录 -->
+	<package name="register" extends="struts-default" namespace="/register">
+		<action name="Register_*" class="com.baizhi.action.RegisterAction" method="{1}">
+			<result name="Ok" type="dispatcher">/front/validateEmail.jsp</result>
+			<result name="buOk" type="redirect">/front/register.jsp</result>
+			<result name="OOk" type="redirect">/front/login.jsp</result>
+			<result name="loginOk" type="redirectAction">
+				<param name="namespace">/front</param>
+				<param name="actionName">Front_selectAll</param>
+			</result>
+		</action>
+	</package>
+	<!-- 购物车 -->
+	<package name="cart" extends="struts-default" namespace="/cart">
+		<action name="Cart_*" class="com.baizhi.action.CartAction" method="{1}">
+			<result name="Ok" type="dispatcher">/front/cart/cart.jsp</result>
+			<result name="OOk" type="redirectAction">
+				<param name="namespace">/front</param>
+				<param name="actionName">Front_selectAll</param>
+			</result>
+		</action>
+	</package>
+	<!-- 购物车 -->
+	<package name="order" extends="struts-default" namespace="/order">
+		<action name="Order_*" class="com.baizhi.action.AddressAction" method="{1}">
+			<result name="Ok" type="dispatcher">/front/address/place-order.jsp</result>
+			<result name="OOk" type="redirectAction">Order_selectAll</result>
+		</action>
+	</package>
+	<!-- 订单 -->
+	<package name="order1" extends="struts-default" namespace="/order1">
+		<action name="Order1_*" class="com.baizhi.action.OrderAction" method="{1}">
+			<result name="Ok" type="redirectAction">
+				Order1_addMoreOrder?orderId=${orderId}
+			</result>
+			<result name="OOk" type="dispatcher">
+				/front/pay/index.jsp
+			</result>
+			<result name="OOOk" type="dispatcher">
+				/front/pay/pay_ok.jsp
+			</result>
+		</action>
+	</package>
+</struts>
+                                                                                                                                                            

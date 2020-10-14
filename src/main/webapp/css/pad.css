@@ -1,0 +1,17 @@
+#pagewrap{
+    width:94%;
+    margin:0 auto;
+}
+.header {
+    padding:2% 0%
+}
+
+.content {
+    width: auto;
+    float: none;
+}
+
+.sidebar {
+    width: auto;
+    float: none;
+}

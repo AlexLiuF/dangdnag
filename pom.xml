@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.baizhi</groupId>
+  <artifactId>dangdang</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- 项目参数配置 -->
+	<properties>
+		<!-- 项目的编码方式 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- jdk版本 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-core -->
+	</properties>
+	
+	<dependencies>
+	<!-- struts -->
+	<dependency>
+	    <groupId>org.apache.struts</groupId>
+	    <artifactId>struts2-core</artifactId>
+	    <version>2.3.16.3</version>
+	</dependency>
+
+	<!-- mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.6</version>
+	</dependency>
+	
+	
+	<!-- ojdbc 注意:mybaits版本高于3.3,ojdbc高于6 -->
+	<dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc</artifactId>
+	    <version>6.0</version>
+	</dependency>
+	
+	<!-- servlet-api -->		
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- jsp-api -->
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>javax.servlet.jsp-api</artifactId>
+	    <version>2.2.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- jstl -->
+	<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	
+	<!-- junit --> 
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- hutool --> 
+	<dependency>
+	    <groupId>cn.hutool</groupId>
+	    <artifactId>hutool-all</artifactId>
+	    <version>4.6.8</version>
+	</dependency>	
+		
+	<!--pagehelper-->
+	<!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>5.2.0</version>
+	</dependency>
+	
+	<!-- 日志 -->
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>2.0.0-alpha1</version>
+	    <scope>test</scope>
+	</dependency>
+		
+	<!-- javamail依赖发送验证码工具 -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	<!--支付宝沙箱依赖 -->
+	<!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+	<dependency>
+	    <groupId>com.alipay.sdk</groupId>
+	    <artifactId>alipay-sdk-java</artifactId>
+	    <version>4.10.81.ALL</version>
+	</dependency>
+	</dependencies>
+  
+</project>

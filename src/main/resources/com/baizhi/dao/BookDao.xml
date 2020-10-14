@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.BookDao">
+<resultMap type="com.baizhi.entity.Book" id="BookMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="author" property="author"/>
+		<result column="cover" property="cover"/>
+		<result column="press" property="press"/>
+		<result column="press_date" property="press_date"/>
+		<result column="edition" property="edition"/>
+		<result column="print_date" property="printDate"/>
+		<result column="impression" property="impression"/>
+		<result column="isbn" property="isbn"/>
+		<result column="word_num" property="wordNum"/>
+		<result column="page_num" property="pageNum"/>
+		<result column="sizeb" property="sizeB"/>
+		<result column="paper" property="paper"/>
+		<result column="pack" property="pack"/>
+		<result column="price" property="price"/>
+		<result column="dprice" property="dprice"/>
+		<result column="create_date" property="createDate"/>
+		<result column="editior_recommend" property="editorRecommend"/>
+		<result column="content_abstract" property="contentAbstract"/>
+		<result column="author_abstract" property="authorAbstract"/>
+		<result column="director" property="director"/>
+		<result column="media_commentary" property="mediaCommentary"/>
+		<result column="sale" property="sale"/>
+		<result column="stock" property="stock"/>
+		<result column="update_date" property="updateDate"/>
+		<result column="category_id" property="categoryId"/>
+	</resultMap>
+	<!-- 增 -->
+	<insert id="insert">
+	
+		insert into d_book values(seq_book.nextval,#{name},#{author},#{cover}, #{press}, #{press_date}, #{edition}, #{printDate}, #{impression}, #{isbn}, #{wordNum}, #{pageNum}, #{sizeB}, #{paper}, #{pack}, #{price}, #{dprice}, sysdate, #{editorRecommend}, #{contentAbstract}, #{authorAbstract}, #{director}, #{mediaCommentary}, 0, #{stock},sysdate, #{categoryId}) 
+	</insert>
+	<!-- 删除 -->
+	<delete id="delete">
+		delete from d_book where id=#{id}
+	</delete>
+	<!-- 改 -->
+	<update id="update">
+		update d_book
+		<set> 
+		<if test="name != null and name.length()>0">
+		name=#{name},
+		</if>
+		<if test="author != null and author.length()>0">
+		author=#{author},
+		</if>
+		<if test="cover != null and cover.length()>0">
+		cover =#{cover},
+		</if>
+		<if test="press != null and press.length()>0">
+		press =#{press},
+		</if>
+		<if test="press_date != null">
+		press_date=#{press_date},
+		</if>
+		<if test="edition != null and edition>0">
+		edition =#{edition},
+		</if>
+		<if test="impression != null and impression>0">
+		impression=#{impression},
+		</if>
+		<if test="isbn != null and isbn.length()>0">
+		isbn =#{isbn},
+		</if>
+		<if test="wordNum != null and  wordNum>0">
+		word_num=#{wordNum},
+		</if>
+		<if test="pageNum != null and pageNum>0">
+		page_num=#{pageNum},
+		</if>
+		<if test="sizeB != null and sizeB.length()>0">
+		sizeb=#{sizeB},
+		</if>
+		<if test="paper != null and paper.length()>0">
+		paper=#{paper},
+		</if>
+		<if test="pack != null and pack.length()>0">
+		pack=#{pack},
+		</if>
+		<if test="price != null and price>0">
+		price=#{price},
+		</if>
+		<if test="dprice != null and dprice>0">
+		dprice=#{dprice},
+		</if>
+		<if test="createDate !=null">
+		create_date=#{createDate},
+		</if>
+		<if test="editorRecommend != null and editorRecommend.length()>0">
+		editor_recommend =#{editorRecommend},
+		</if>
+		<if test="contentAbstract != null and contentAbstract.length()>0">
+		content_abstract =#{contentAbstract},
+		</if>
+		<if test="authorAbstract != null and authorAbstract.length()>0">
+		author_abstract =#{authorAbstract},
+		</if>
+		<if test="director != null and director.length()>0">
+		director=#{director},
+		</if>
+		<if test="mediaCommentary != null and mediaCommentary.length()>0">
+		media_commentary =#{mediaCommentary},
+		</if>
+		<if test="sale != null and sale>0">
+		sale =#{sale},
+		</if>
+		<if test="stock != null and stock>0">
+		stock=#{stock},
+		</if>
+		update_date=sysdate,
+		<if test="categoryId != null and categoryId>0">
+		category_id=#{categoryId} 
+		</if>
+		</set>
+		where id=#{id}
+	</update>
+	<!--查 -->
+	<select id="selectAll" resultMap="BookMap">
+		select * from d_book
+	</select>
+	<!-- 根据id查 -->
+	<select id="selectById" resultMap="BookMap">
+		select * from d_book where id=#{id}
+	</select>
+	<!-- 根据条件查询 -->
+	<select id="selectByQuery" resultMap="BookMap">
+		select * from d_book
+		<where>
+			<if test="query!=null and query.length()>0 and value!=null and value.length()>0">
+				${query} like '%'||#{value}||'%'
+			</if>
+		</where>
+	</select>
+	<!-- 查询编辑推荐 -->
+	<select id="selectRecommend" resultMap="BookMap">
+		select * from d_book where rownum&lt;=8 order by dbms_random.value
+	</select>
+	<!-- 热销图书 -->
+	<select id="selectHotSale" resultMap="BookMap">
+		select * from (select * from d_book order by create_date desc) where rownum &lt;=8
+	</select>
+	<!-- 最新上架 -->
+	<select id="selectNewUp" resultMap="BookMap">
+		select * from  (
+		select * from d_book order by create_date desc
+		) where rownum&lt;=8
+	</select>
+	<!-- 新书热卖 -->
+	<select id="selectHotNewSale" resultMap="BookMap">
+		select * from (
+		select * from d_book order by create_date,sale desc
+		) where rownum &lt;=8
+	</select>
+	<!-- 前台模糊查询 -->
+	<select id="selectByValue" resultMap="BookMap">
+		select * from d_book where 
+		name like '%'||#{value}||'%'
+		or author like '%'||#{value}||'%'
+		or press like '%'||#{value}||'%'
+	</select>
+	<!-- 根据二级类别查询 -->
+	<select id="selectByCategoryTwo" resultMap="BookMap">
+		select * from d_book where category_id = #{categoryId}
+	</select>
+	<!-- 根据一级类别查询 -->
+	<select id="selectByCategory" resultMap="BookMap">
+		select * from d_book where category_id in(
+			select id from d_category where parent_id = #{fid}
+		)
+	</select>
+</mapper>
